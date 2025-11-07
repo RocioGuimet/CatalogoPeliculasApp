@@ -2,6 +2,7 @@ package Presentacion;
 
 import dominio.Pelicula;
 import service.IServicePeliculas;
+import service.ServicePeliculasArchivo;
 import service.ServicePeliculasLista;
 
 import java.util.Scanner;
@@ -11,7 +12,8 @@ public class CatalogoPeliculasApp {
         var salir = false;
         var consola = new Scanner(System.in);
         // Agregamos la implementacion del service
-        IServicePeliculas servicePeliculas = new ServicePeliculasLista();
+        // IServicePeliculas servicePeliculas = new ServicePeliculasLista(); ANTIGUA DE PRUEBA
+        IServicePeliculas servicePeliculas = new ServicePeliculasArchivo();
         while(!salir){
             try{
                 mostrarMenu();
@@ -25,12 +27,13 @@ public class CatalogoPeliculasApp {
 
     //Implementamos metodos
     private static void mostrarMenu(){
-        System.out.println("""
+        System.out.print("""
                 * Catálogo de películas *
                 1. Agregar película
                 2. Listar películas
                 3. Buscar película
                 4. Salir
+                Elige una opción: 
                 """);
     }
 
