@@ -37,7 +37,7 @@ public class Pelicula {
 
     @Override
     public String toString() {
-        return "Pelicula{" +
+        return "Película{" +
                 "nombre='" + nombre + '\'' +
                 '}';
     }
